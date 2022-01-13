@@ -7,6 +7,10 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { SorterPipe } from './pipe/sorter.pipe';
+import { IconComponent } from './common/icon/icon.component';
+import { ActionButtonComponent } from './common/action-button/action-button.component';
+import { ActionButtonGroupComponent } from './common/action-button-group/action-button-group.component';
+import { DataCellComponent } from './common/data-cell/data-cell.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +19,10 @@ import { SorterPipe } from './pipe/sorter.pipe';
     UserListComponent,
     FilterPipe,
     SorterPipe,
+    IconComponent,
+    ActionButtonComponent,
+    ActionButtonGroupComponent,
+    DataCellComponent,
   ],
   imports: [
     BrowserModule,
