@@ -5,11 +5,27 @@ import { UserService } from './service/user.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [ UserService ]
 })
 export class AppComponent {
   title = 'The good Angular programmer';
 
-  constructor() {}
+  userData!: User[]
+  currentUser: User = new User
 
+  constructor(private userService: UserService) {
+    this.userData = this.userService.list
+  }
+
+  onSelectClick(currentUser: User): void {
+    this.currentUser = currentUser
+  }
+  onUpdateClick(currentUser: User): void {
+    this.userService.updateUser(currentUser)
+  }
+  onDeleteClick(currentUser: User): void {
+    this.userService.removeUser(currentUser)
+  }
 }
+
